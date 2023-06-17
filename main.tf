@@ -15,7 +15,7 @@ module "proxmox_vms" {
       manage_etc_hosts    = true
       fqdn                = "docker-1.jodywan.com"
       timezone            = "Europe/London"
-      username            = "adminjody"
+      username            = "centos"
       ssh_authorized_keys = var.ssh_authorized_keys
       sudo_config         = "['ALL=(ALL) NOPASSWD:ALL']"
       package_upgrade     = false
