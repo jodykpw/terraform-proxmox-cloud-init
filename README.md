@@ -53,21 +53,30 @@ Follow these steps to get started with the project:
 
 11. Initialize the Terraform working directory:
 
-   ```bash
-   terraform init
-   ```
+      ```bash
+      terraform init
+      ```
 
 12. Review the execution plan:
 
-   ```bash
-   terraform plan
-   ```
+      With (Environment Variables)
+      
+      ```bash
+      terraform plan -out=plan.tfplan
+      ```
+
+      OR (Optional: With secrets.tfvars)
+
+      ```bash
+      terraform plan -var-file=terraform.tfvars -var-file=secrets.tfvars -out=plan.tfplan
+      ```
+
 
 13. Provision the virtual machines:
 
-   ```bash
-   terraform apply
-   ```
+      ```bash
+      terraform apply plan.tfplan
+      ```
 
 You will be prompted to confirm the provisioning. Type yes to proceed.
 
@@ -81,8 +90,16 @@ You will be prompted to confirm the provisioning. Type yes to proceed.
 
 To clean up and destroy the provisioned resources, run the following command:
 
+   With (Environment Variables)
+
    ```bash
-   terraform destroy
+   terraform plan -destroy -out=destroy.tfdestroy
+   ```
+
+   OR (Optional: With secrets.tfvars)
+
+   ```bash
+   terraform plan -var-file=terraform.tfvars -var-file=secrets.tfvars -destroy -out=destroy.tfdestroy
    ```
 
 You will be prompted to confirm the destruction. Type yes to proceed.
