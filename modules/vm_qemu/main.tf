@@ -33,7 +33,7 @@ resource "null_resource" "cloud_init_config_files" {
 
   provisioner "file" {
     source      = local_file.cloud_init_user_data_file[each.key].filename
-    destination = "${var.provisioner_directory_path}/snippet/vm-${each.key}-cloud-init.yaml"
+    destination = "${var.provisioner_directory_path}/snippets/vm-${each.key}-cloud-init.yaml"
   }
 }
 
