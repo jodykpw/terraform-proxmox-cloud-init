@@ -1,22 +1,17 @@
 # Provisioner Cloud-Init File
-variable "connection_type" {
+variable "ssh_host" {
+  description = "IP address of the remote host"
   type        = string
-  description = "The connection type. Valid values are `ssh` and `winrm`. Provisioners typically assume that the remote system runs Microsoft Windows when using WinRM. Behaviors based on the SSH target_platform will force Windows-specific behavior for WinRM, unless otherwise specified."
 }
 
-variable "connection_user" {
-  type        = string
-  description = "The user to use for the connection."
-}
-
-variable "connection_private_key_path" {
-  type        = string
-  description = "The contents of an SSH key to use for the connection. These can be loaded from a file on disk using the file function. This takes preference over password if provided."
-}
-
-variable "connection_host" {
-  type        = string
+variable "ssh_user" {
   description = "The address of the pve host to connect to."
+  type        = string
+}
+
+variable "ssh_password" {
+  description = "SSH password"
+  type        = string
 }
 
 variable "provisioner_directory_path" {

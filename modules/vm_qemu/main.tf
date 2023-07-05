@@ -25,10 +25,10 @@ resource "null_resource" "cloud_init_config_files" {
   for_each = var.vms
 
   connection {
-    type        = var.connection_type
-    user        = var.connection_user
-    host        = var.connection_host
-    private_key = file(var.connection_private_key_path)
+    type     = "ssh"
+    host     = var.ssh_host
+    user     = var.ssh_user
+    password = var.ssh_password
   }
 
   provisioner "file" {

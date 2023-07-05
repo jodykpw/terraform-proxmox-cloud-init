@@ -128,7 +128,4 @@ override.tf.json
 terraform.rc
 
 # Customs
-**/id_rsa
-plan.tfplan
-destroy.tfdestroy
 secrets.tfvars

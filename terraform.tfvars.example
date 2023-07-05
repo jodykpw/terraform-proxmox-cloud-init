@@ -7,8 +7,6 @@ pm_log_levels_default    = "debug"
 pm_log_levels_capturelog = ""
 
 # PVE Cluster Host Connection
-connection_type             = "ssh"
-connection_user             = "root"
-connection_private_key_path = "private_key/id_rsa"
-connection_host             = "10.1.5.101"
+ssh_user                    = "root"
+ssh_host                    = "10.1.5.101"
 provisioner_directory_path  = "/mnt/pve/pve-cluster-fs" # shared storage (NFS) for cloud-init user data file.
