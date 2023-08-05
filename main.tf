@@ -1,11 +1,9 @@
 module "proxmox_vms" {
   source = "./modules/vm_qemu"
 
-  connection_type             = var.connection_type
-  connection_user             = var.connection_user
-  connection_host             = var.connection_host
-  connection_private_key_path = var.connection_private_key_path
-  provisioner_directory_path  = var.provisioner_directory_path
+  ssh_user                    = var.ssh_user
+  ssh_host                    = var.ssh_host
+  ssh_password                = var.ssh_password
 
   vms = {
     "docker-1" = {
